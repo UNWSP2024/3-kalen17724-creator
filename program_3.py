@@ -9,24 +9,25 @@
 # Over 10 pounds	$4.75
 # Write a program which calculates the shipping charge and displays the total.
 
-def weight_conversion(weight):
-    # Calculate the shipping charge.
-    shippingCost = 0.0
-    ######################
-    # WRITE YOUR CODE HERE
-    ######################
-    
-    return shippingCost
+# option 1, 2 pounds or less
+# option 2, over 2 lb less then 6lb
+# option 3, over 6 and not more then 10 lb 
+# option 4, over 10 lb
+option_1 = 1.50
+option_2 = 3.00
+option_3 = 4.00
+option_4 = 4.75
 
-#### This piece of the code has been done for you,
-#### you only need to worry about the actual shipping 
-#### charge logic in the weight_conversion function
-if __name__ == '__main__':
-    # Local variables
-    weight = 0.0
-    shippingCost = 0.0
-    # Get package weight from the user.
-    weight = float(input('Enter the weight of the package: '))
-    # Display the shipping charge.
-    shippingCost = weight_conversion(weight)
-    print ('Shipping charge: $', format(shippingCost, '.2f'))
+
+weight = float(input("Enter the package weight: "))
+
+if weight >0 and weight <= 2:
+    print (f"Your cost is ${weight*option_1:.2f}")
+if weight >2 and weight <= 6:
+    print (f"Your cost is ${weight*option_2:.2f}")
+if weight >6 and weight <=10:
+    print (f"Your cost is ${weight*option_3:.2f}")
+if weight >10:
+    print (f"Your cost is ${weight*option_4:.2f}")
+
+
